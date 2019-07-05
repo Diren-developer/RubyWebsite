@@ -1,0 +1,51 @@
+<%= render "layouts/header" %>
+
+		<%= render "layouts/notification" %>
+
+		<div class="row">
+			<div class="col-md-12 banner-style">
+				<div class="bannertext">
+					Welcome to Your Course App
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					This is the home page for the RAD Assignment 2
+				</div>
+				<div class="dropdownstylebtn">
+					<a href="/coordinators/new">
+						<button class="redbtn"><span class="fa fa-cog"></span> Sign up now</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row gap-top">
+			<div class="col-md-4 textpadding-right">
+				<div class="title-black">
+					View Course as Guest User
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					Browse and view courses as a guest and sign up later
+				</div>
+				<div class="dropdownstylebtn">
+					<a href="/courses">
+						<button class="greenbtn"><span class="fa fa-book"></span> Browse all courses</button>
+					</a>
+				</div>
+			</div>
+			
+			<div class="col-md-4 textpadding-right">
+				<div class="title-black">
+					Sign in to your account
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					Update your courses, rate courses, view coordinator informations
+				</div>
+				<div class="dropdownstylebtn">
+					<a href="/login/index">
+						<button class="greenbtn"><span class="fa fa-address-card-o"></span> Log in to your account</button>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+<%= render "layouts/footer" %>

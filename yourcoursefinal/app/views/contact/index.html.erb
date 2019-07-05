@@ -1,0 +1,74 @@
+<%= render "layouts/header" %>
+		<script>
+			$(document).ready(function() {
+				$('#notif-close').click(function() {
+					$('#notif').hide();
+				});
+			});
+		</script>
+
+		<div class="row">
+			<div class="col-md-12 banner-style">
+				<div class="bannertext">
+					Contact Us
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					Please feel free to contact our team
+				</div>
+			</div>
+		</div>
+		
+		<div class="row gap-top">
+			<div class="col-md-4 textpadding-right">
+				<div class="title-black">
+					Feedback Form
+				</div>
+				<div class="contact-gap-top"></div>
+				
+				<%= render "layouts/notification" %>
+
+				<div class="contact-gap-top"></div>
+				
+				<%= form_with scope: :course, url: '/contact/index', local: true, multipart: true do |form| %>
+					<%= form.text_area :feedback, class: 'contentfont-style formtext-field full-width', placeholder: 'Write your feedback' %>
+					<div class="formstylebtn">
+						<%= form.submit 'Submit', class: 'greenbtn full-width', disabled: false %>
+					</div>
+				<% end %>
+			</div>
+			
+			<div class="col-md-4 textpadding-right">
+				<div class="title-black">
+					Contact Information
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					RAD Webmaster
+					<br>
+					<a href="mailto:teamrad@rmit.edu.au">teamrad@rmit.edu.au</a>
+					<br>
+					<a href="https://www.rmit.edu.au/" target="_blank">www.rmit.edu.au</a>
+				</div>
+			</div>
+			
+			<div class="col-md-4 textpadding-right">
+				<div class="title-black">
+					Useful Links
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					<a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>
+					<br>
+					<a href="https://rubygems.org/gems/rails/versions/5.0.0" target="_blank">Ruby Gems</a>
+				</div>
+				
+				<div class="title-black">
+					Social Media
+				</div>
+				<div class="contentfont-style bannersubtext-style">
+					<a href="https://twitter.com/rmit_csit" target="_blank">Twitter</a><span>&nbsp;</span><b class="fa fa-twitter"></b>
+					<br>
+					<a href="https://www.facebook.com/RMITuniversity/" target="_blank">Facebook</a><span>&nbsp;</span><b class="fa fa-facebook"></b>
+				</div>
+			</div>
+			
+		</div>
+<%= render "layouts/footer" %>

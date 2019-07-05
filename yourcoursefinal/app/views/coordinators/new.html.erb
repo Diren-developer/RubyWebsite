@@ -1,0 +1,43 @@
+<%= render "layouts/header" %>
+		<script>
+			$(document).ready(function() {
+				$('#notif-close').click(function() {
+					event.preventDefault();
+					$('#notif').hide();
+				});
+			});
+		</script>
+		
+		<div class="row title-page-gap-top">
+			<div class="col-md-12">
+				<div class="title-page">Coordinator Register</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr>
+		</div>
+		
+		<% @data = @coordinator %>
+		<%= render "layouts/notification_new" %>
+		
+		<div class="row form-style">
+			<div class="col-md-12 formcontent-style">
+				<%= form_with scope: :coordinator, url: coordinators_path, local: true do |form| %>
+					<%= form.hidden_field :type, value: 'signup' %>
+					<div class="formtext-label">Name</div>
+					<%= form.text_field :name, class: 'formtext-field full-width' %>
+					
+					<div class="formtext-label">Email</div>
+					<%= form.email_field :email, class: 'formtext-field full-width' %>
+					
+					<div class="formtext-label">Password</div>
+					<%= form.password_field :password, class: 'formtext-field full-width' %>
+					
+					<div class="formstylebtn">
+						<%= form.submit 'Register', class: 'greenbtn full-width' %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+<%= render "layouts/footer" %>

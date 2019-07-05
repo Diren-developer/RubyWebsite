@@ -1,0 +1,51 @@
+<%= render "layouts/header" %>
+		<script>
+			$( function() {
+				$( "#tabs" ).tabs();
+			} );
+			
+			$(document).ready(function() {
+			  $('#tab-courses').click(function() {
+					$('#title').text("All Courses");
+				});
+				$('#tab-coordinators').click(function() {
+					$('#title').text("All Coordinators");
+				});
+			});
+		</script>
+		
+		<%= render "layouts/notification" %>
+
+		<div class="row title-page-gap-top">
+			<div class="col-md-12">
+				<div class="title-page" id="title">All Courses</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs-1" id="tab-courses">Courses</a></li>
+						<li><a href="#tabs-2" id="tab-coordinators">Coordinators</a></li>
+					</ul>
+					<div id="tabs-1">
+					
+					<%= render @courses %>
+						
+					</div> <!-- close tab 1 -->
+					
+					<div id="tabs-2">
+					
+					<%= render @coordinators %>
+						
+					</div> <!-- close tab 2 -->
+					
+				</div>
+			</div>
+		</div>
+<%= render "layouts/footer" %>

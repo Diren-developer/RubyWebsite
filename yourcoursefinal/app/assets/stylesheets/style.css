@@ -1,0 +1,395 @@
+body {
+	font-family: "Arial", Sans-serif;
+}
+
+.row, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.containercontent {
+	margin-top: 10px;
+	padding-left: -10px;
+	padding-right: -10px;
+	max-width: 1000px; 
+}
+
+.menustyle {
+	padding-top: 10px;
+	text-align: right;
+}
+
+.menuhr {
+	margin-top: 5px !important;
+  margin-bottom: 7px !important;
+}
+
+.menuendgap {
+	height: 7px;
+}
+
+.dropdownstylebtn {
+  position: relative;
+  display: inline-block;
+}
+
+.logodropdownstylebtn {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownstylebtnbtn , .loginbtn, .logo{
+  color: white;
+  padding: 10px 14px;
+  font-size: 14px;
+	background-color: #5ec0e0;
+	border: 1px solid #4ab8dc;
+	border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdownstyleredbtn {
+  color: white;
+  padding: 10px 14px;
+  font-size: 14px;
+	background-color: #ab2b24;
+	border: 1px solid #8b221d;
+	border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginbtn:hover{
+  color: #3da0e2;
+  padding: 10px 14px;
+	background-color: #eeeeee;
+	border: 1px solid #369fc1;
+	border-radius: 4px;
+}
+
+.dropdownstylebtn-content {
+  display: none;
+	right: 0px;
+	text-align: left;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.dropdownstylebtn-content a {
+  font-size: 14px;
+	color: black;
+	padding: 7px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownstylebtn-content a:hover {
+	background-color: #f5f5f5;
+}
+
+.dropdownstylebtn:hover .dropdownstylebtn-content {
+  display: block;
+}
+
+.dropdownstylebtn:hover .dropdownstylebtnbtn {
+  background-color: #2b9abe;
+	border: 1px solid #2584a2;
+}
+
+.dropdownstylebtn:hover .dropdownstyleredbtn {
+  background-color: #ab2b24;
+	border: 1px solid #8b221d;
+}
+
+.redbtn {
+  color: white;
+  padding: 8px 14px;
+  font-size: 16px;
+	background-color: #d8544e;
+	border: 1px solid #d3413a;
+	border-radius: 4px;
+  cursor: pointer;
+}
+
+.redbtn:hover{
+  color: #d3413a;
+	background-color: white;
+	border: 1px solid #d3413a;
+}
+
+.greenbtn {
+  color: white;
+  padding: 5px 14px;
+  font-size: 14px;
+	font-weight: bold;
+	background-color: #5db154;
+	border: 1px solid #5aac51;
+	border-radius: 4px;
+  cursor: pointer;
+}
+
+.greenbtn:hover{
+  color: #5aac51;
+	background-color: #eeeeee;
+	border: 1px solid #5aac51;
+}
+
+.bluebtn {
+  color: white;
+  padding: 5px 14px;
+  font-size: 14px;
+	font-weight: bold;
+	background-color: #5ec0e0;
+	border: 1px solid #4cb9dd;
+	border-radius: 4px;
+  cursor: pointer;
+}
+
+.bluebtn:hover{
+  color: #4cb9dd;
+	background-color: #eeeeee;
+	border: 1px solid #4cb9dd;
+}
+
+.logohome {
+  font-size: 20px !important;
+	font-weight: bold;
+	text-align: center;
+	cursor: default !important;
+}
+
+.banner-style {
+	margin-top: 5px;
+	padding: 40px 10px;
+	background-color: #eeeeee;
+	text-align: center;
+}
+
+.bannertext {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.bannersubtext-style {
+	margin: 10px 0px 25px 0px;
+}
+
+.contentfont-style {
+	color: #857978;
+	font-size: 14px;
+}
+
+.title-black {
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.gap-top {
+	margin-top: 30px;
+}
+
+.textpadding-right {
+	padding-right: 20px !important;
+}
+
+.full-width {
+	width: 100% !important;
+}
+
+.formstylebtn {
+  position: relative;
+}
+
+/* reference https://stackoverflow.com/questions/36952206/how-to-show-font-awesome-icon-on-hover */
+a:hover +span+ b, a + span:hover+ b, a + span + b:hover {
+  visibility: visible;
+}
+
+a +span+ b { /* in all other case hide it */
+  visibility: hidden;
+}
+
+.title-page {
+	color: black;
+	font-size: 33px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.title-page-gap-top {
+	margin-top: 20px;
+}
+
+.contact-gap-top {
+	margin-top: 15px;
+}
+
+.tab-gap-top {
+	margin-top: 10px;
+}
+
+.tab-gap-hr {
+	height: 20px;
+	display: block;
+}
+
+.tab-one {
+	min-width: 190px;
+	padding: 0px 5px;
+}
+
+.tab-two {
+	border: 1px solid #e4e5e4;
+	border-radius: 5px;
+	background-color: #eeeeef;
+	padding: 25px 20px !important;
+}
+
+.tab-vote {
+	text-align: right;
+}
+
+.tab-text-title {
+	font-size: 20px;
+	font-weight: bold;
+	color: #3079b2;
+	line-height: 30px;
+}
+
+.tab-text-one {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tab-text-two {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 30px;
+}
+
+.tab-text-three {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 30px;
+}
+
+.form-style {
+	width:780px; 
+	margin:0 auto;
+}
+
+.notification-style {
+	color: #a84541;
+	text-align: left;
+	border: 1px solid #ebccd1;
+	border-radius: 5px;
+	background-color: #f2dede;
+	padding: 20px 15px !important;
+}
+
+.notificationsmallgreen-style {
+	color: #417947;
+	text-align: left;
+	border: 1px solid #d7e9c6;
+	border-radius: 5px;
+	background-color: #dfefd7;
+	padding: 15px 15px !important;
+}
+
+.notificationsmallred-style {
+	color: #a84541;
+	text-align: left;
+	border: 1px solid #ebccd1;
+	border-radius: 5px;
+	background-color: #f2dede;
+	padding: 15px 15px !important;
+}
+
+.notif-close {
+	float: right;
+	position: relative;
+}
+
+.notif-close  a{
+	color: #c1c1c1;
+	font-weight: bold;
+}
+
+
+.notif-close a:hover {
+	text-align: right;
+	color: #9f9f9f;
+	text-decoration: none !important;
+}
+
+.formcontent-style {
+	color: black;
+	text-align: left;
+	border: 1px solid #d6d6d6;
+	border-radius: 5px;
+	background-color: #ededed;
+	padding: 20px 15px !important;
+}
+
+.formtext-label {
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+.formtext-field {
+	border-radius: 4px;
+	border: 1px solid #d9d9d9;
+	padding: 1px 5px;
+	margin-bottom: 15px;
+}
+
+.checkbox-text {
+	font-weight: normal !important;
+}
+
+.formcheckbox-gap {
+	margin-bottom: 15px;
+}
+
+.course-view {
+	border: 1px solid #e4e5e4;
+	border-radius: 5px;
+	background-color: #eeeeef;
+	padding: 25px 20px !important;
+}
+
+.courseprerequisite-text {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 30px;
+	padding-bottom: 5px;
+}
+
+.coursecoordinator-view {
+	min-width: 250px;
+	padding: 0px 5px;
+}
+
+.courseedit-btn {
+	position: absolute;
+	display: inline-block;
+	right: 0px;
+}
+
+.greencoursebtn {
+  padding: 0px 14px !important;
+}
+
+.profilegreybg {
+	top: 20px;
+	max-width: 550px;
+	float: none;
+	margin: 0 auto;
+}

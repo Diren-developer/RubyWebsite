@@ -1,0 +1,29 @@
+<% if flash[:notice].present? %>
+<div id="notif">
+	<div class="row title-page-gap-top">
+		<div class="col-md-12 notificationsmallgreen-style">
+			<div class="notif-close">
+					<a href="#" id="notif-close">x</a>
+				</div>
+				<div class="notification-one">
+					<%= flash[:notice] %>
+				</div>
+		</div>
+	</div>
+</div>
+<% end %>
+
+<% if flash[:error].present? %>
+<div id="notif">
+	<div class="row title-page-gap-top">
+		<div class="col-md-12 notificationsmallred-style">
+			<div class="notif-close">
+					<a href="#" id="notif-close">x</a>
+				</div>
+				<div class="notification-one">
+					<%= flash[:error] %>
+				</div>
+		</div>
+	</div>
+</div>
+<% end %>

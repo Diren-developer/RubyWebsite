@@ -1,0 +1,35 @@
+<%= render "layouts/header" %>
+		<script>
+			$(document).ready(function() {
+				$('#notif-close').click(function() {
+					$('#notif').hide();
+				});
+			});
+		</script>
+		
+		<div class="row title-page-gap-top">
+			<div class="col-md-12">
+				<div class="title-page">Create a new category</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr>
+		</div>
+		
+		<% @data = @category %>
+		<%= render "layouts/notification_new" %>
+		
+		<div class="row form-style">
+			<div class="col-md-12 formcontent-style">
+				<%= form_with scope: :category, url: categories_path, local: true do |form| %>
+					<div class="formtext-label">Name</div>
+					<%= form.text_field :name, class: 'formtext-field full-width' %>
+					
+					<div class="formstylebtn">
+						<%= form.submit 'Create new category', class: 'greenbtn full-width' %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+<%= render "layouts/footer" %>

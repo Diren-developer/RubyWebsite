@@ -1,0 +1,65 @@
+<%= render "layouts/header" %>
+		<script>
+			$(document).ready(function() {
+				$('#notif-close').click(function() {
+					$('#notif').hide();
+				});
+			});
+		</script>
+		
+		<div class="row title-page-gap-top">
+			<div class="col-md-12">
+				<div class="title-page">Create a new course</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr>
+		</div>
+		
+		<% @data = @course %>
+		<%= render "layouts/notification_new" %>
+		
+		<div class="row form-style">
+			<div class="col-md-12 formcontent-style">
+				<%= form_with scope: :course, url: courses_path, local: true, multipart: true do |form| %>
+					<div class="formtext-label">Name</div>
+					<%= form.text_field :name, class: 'formtext-field full-width' %>
+					
+					<div class="formtext-label">Prerequisite</div>
+					<%= form.text_field :prerequisite, class: 'formtext-field full-width' %>
+					
+					<div class="formtext-label">Desciption</div>
+					<%= form.text_field :description, class: 'formtext-field full-width' %>
+					
+					<div class="formtext-label formcheckbox-gap">
+						Category:
+						<span class="checkbox-text">
+							<% @categories.each_with_index do |category, category_index| %>
+							<%= check_box_tag "categories[]", category.id %> <%= category.name %>
+							&nbsp;&nbsp;
+							<% end %>
+						</span>
+					</div>
+					
+					<div class="formtext-label formcheckbox-gap">
+						Location:
+						<span class="checkbox-text">
+							<% @locations.each_with_index do |location, category_index| %>
+							<%= check_box_tag "locations[]", location.id %> <%= location.name %>
+							&nbsp;&nbsp;
+							<% end %>
+						</span>
+					</div>
+					
+					<div class="formtext-label formcheckbox-gap">
+						<%= form.file_field :image %>
+					</div>
+					
+					<div class="formstylebtn">
+						<%= form.submit 'Create new course', class: 'greenbtn full-width' %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+<%= render "layouts/footer" %>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YOURCOURSE</title>
+	<%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'style.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'jquery-ui.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'font-awesome.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+	
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'jquery.min.js', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'jquery-ui.js', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
+	
+	<script>
+	jQuery(document).ready(function( $ ){
+			// Change web page title on focus or on blur (tab not active)
+			// Reference: https://blog.youdivi.com/tutorials/change-browser-tab-title-tab-not-active/
+			
+			// Get page title
+				var pageTitle = $("title").text();
+			
+			// Change page title on blur
+			$(window).blur(function() {
+				$("title").text("Access YOURCOURSE");
+			});
+
+			// Change page title back on focus
+			$(window).focus(function() {
+				$("title").text(pageTitle);
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	<div class="container-fluid containercontent">
+		<div class="row">
+			<table width="100%">
+				<tr>
+					<td>
+						<div class="col-md-2">
+							<div class="logodropdownstylebtn">
+								<button class="logo logohome">YOURCOURSE</button>
+							</div>
+						</div>
+						
+						<div class="col-md-10 menustyle">
+							<div class="dropdownstylebtn">
+								<a href="<%= (logged_in? ? "/courses" : "/") %>">
+									<button class="loginbtn"><span class="fa fa-home"></span></button>
+								</a>
+							</div>
+
+							<div class="dropdownstylebtn">
+								<button class="dropdownstylebtnbtn">
+									<span class="fa fa-crosshairs"></span> Category <span class="fa fa-caret-down"></span>
+								</button>
+								<div class="dropdownstylebtn-content">
+									<% @categories.each_with_index do |category, category_index| %>
+									<a href="/categories/<%= category.id %>"><%= category.name %></a>
+									<% end %>
+									<% if logged_in? %>
+									<hr class="menuhr">
+									<a href="/categories/new">Create Category</a>
+									<div class="menuendgap"></div>
+									<% end %>
+								</div>
+							</div>
+
+							<div class="dropdownstylebtn">
+								<button class="dropdownstylebtnbtn">
+									<span class="fa fa-location-arrow"></span> Locations <span class="fa fa-caret-down"></span>
+								</button>
+								<div class="dropdownstylebtn-content">
+									<% @locations.each_with_index do |location, location_index| %>
+									<a href="/locations/<%= location.id %>"><%= location.name %></a>
+									<% end %>
+									<% if logged_in? %>
+									<hr class="menuhr">
+									<a href="/locations/new">Create Location</a>
+									<div class="menuendgap"></div>
+									<% end %>
+								</div>
+							</div>
+							
+							<% if logged_in? %>
+							<div class="dropdownstylebtn">
+								<a href="/courses/new">
+									<button class="loginbtn"><span class="fa fa-file-text-o"></span> New Course</button>
+								</a>
+							</div>
+							<% end %>
+
+							<div class="dropdownstylebtn">
+							<% if logged_in? %>
+								<button class="dropdownstyleredbtn">
+									<%= current_coordinator.name %> <span class="fa fa-caret-down"></span>
+								</button>
+								<div class="dropdownstylebtn-content">
+									<a href="/profiles">View Profile</a>
+									<a href="/coordinators/<%= current_coordinator.id %>/edit">Edit Profile</a>
+									<hr class="menuhr">
+									<%= link_to 'Logout', '/logout', method: :delete %>
+									<div class="menuendgap"></div>
+								</div>
+							<% else %>
+								<a href="/coordinators">
+									<button class="loginbtn"><span class="fa fa-address-card-o"></span> Log In</button>
+								</a>
+							<% end %>
+							</div>
+						</div>
+						
+					</td>
+				</tr>
+			</table>
+		</div>

@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-md-2 center-text tab-gap-top tab-one">
+		<img src="<%= (course.image.nil? ? "/uploads/coordinator-1.jpg" : '/uploads/'+course.image) %>" width="103">
+		<div class="tab-text-one tab-gap-top">Coordinator name: <%= (course.coordinator.nil? ? "N/A" : course.coordinator.name) %></div>
+	</div>
+	<div class="col-md-7 tab-two">
+		<div class="tab-text-title"><a href="/courses/<%= course.id %>"><%= course.name %></a></div>
+		<div class="tab-text-two">Prerequisite: <%= course.prerequisite %></div>
+		<div class="tab-text-two content-font-style">Category: 
+		<% course.categories.each_with_index do |category, category_index| %>
+			<a href="/categories/<%= category.id %>"><%= category.name %></a>
+			<% if (category != course.categories.last) %>
+			&nbsp;&nbsp;&nbsp;
+			<% end %>
+		<% end %>
+		</div>
+		<div class="tab-text-two">Location: <a href="/location/index">
+		<% course.locations.each_with_index do |location, location_index| %>
+			<a href="/locations/<%= location.id %>"><%= location.name %></a>
+			<% if (location != course.locations.last) %>
+			&nbsp;&nbsp;&nbsp;
+			<% end %>
+		<% end %>
+		</a></div>
+		<div class="tab-text-three">Created: <%= time_ago_in_words(course.created) %> ago</div>
+		<div class="tab-vote">
+			<a href="<%= (logged_in? ? "/votes/?id="+course.id.to_s+"&vote=1" : "#") %>"><span class="fa fa-thumbs-o-up"></span> <%= course.votes.where(:result => 1).count %></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="<%= (logged_in? ? "/votes/?id="+course.id.to_s+"&vote=0" : "#") %>"><span class="fa fa-thumbs-o-down"></span> <%= course.votes.where(:result => 0).count %></a>
+		</div>
+	</div>
+</div>
+
+<% if (course != @courses.last) %>
+<div class="tab-gap-hr"></div>
+<hr>
+<% end %>

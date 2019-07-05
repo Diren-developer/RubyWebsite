@@ -1,0 +1,75 @@
+<%= render "layouts/header" %>
+
+<%= render "layouts/notification" %>
+
+<div class="row title-page-gap-top">
+	<div class="col-md-12">
+		<div class="title-page" id="title"><%= @course.name %></div>
+	</div>
+</div>
+
+<div class="row">
+<hr>
+</div>
+
+<div class="row">
+
+	<div class="col-md-8">
+		
+		<div class="courseprerequisite-text">
+			Prerequisite: <%= @course.prerequisite %>
+			<% if @course.coordinator == current_coordinator %>
+			<div class="courseedit-btn">
+				<a href="/courses/<%= @course.id %>/edit">
+					<button class="greenbtn greencoursebtn"> Edit this course</button>
+				</a>
+			</div>
+			<% end %>
+		</div>
+		<div class="course-view">
+			<div class="tab-text-two content-font-style"><b>Category:</b>
+			<% @course.categories.each_with_index do |category, category_index| %>
+				<a href="/categories/<%= category.id %>"><%= category.name %></a>
+				<% if (category != @course.categories.last) %>
+				&nbsp;&nbsp;&nbsp;
+				<% end %>
+			<% end %>
+			</div>
+			<div class="tab-text-two"><b>Location:</b>
+			<% @course.locations.each_with_index do |location, location_index| %>
+				<a href="/locations/<%= location.id %>"><%= location.name %></a>
+				<% if (location != @course.locations.last) %>
+				&nbsp;&nbsp;&nbsp;
+				<% end %>
+			<% end %>
+			</div>
+			<div class="tab-text-two">
+				<b>Course Description:</b>
+				<br>
+				<%= @course.description %>
+			</div>
+			<div class="tab-vote">
+				<a href="<%= (logged_in? ? "/votes/?id="+@course.id.to_s+"&vote=1" : "#") %>"><span class="fa fa-thumbs-o-up"></span> <%= @course.votes.where(:result => 1).count %></a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="<%= (logged_in? ? "/votes/?id="+@course.id.to_s+"&vote=0" : "#") %>"><span class="fa fa-thumbs-o-down"></span> <%= @course.votes.where(:result => 0).count %></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4 center-text tab-gap-top coursecoordinator-view">
+		<img src="<%= (@course.image.nil? ? "/uploads/coordinator-1.jpg" : '/uploads/'+@course.image) %>" width="130">
+		<div class="tab-text-one tab-gap-top">Brought to you by: <%= (@course.coordinator.nil? ? "N/A" : @course.coordinator.name) %></div>
+	</div>
+
+</div>
+
+<div class="row">
+	<div class="col-md-12 gap-top">
+		<div class="dropdownstylebtn">
+			<a href="/courses">
+				<button class="bluebtn"> Return to Courses List</button>
+			</a>
+		</div>
+	</div>
+</div>
+<%= render "layouts/footer" %>

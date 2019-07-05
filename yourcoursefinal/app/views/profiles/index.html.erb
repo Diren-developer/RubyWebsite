@@ -1,0 +1,37 @@
+<%= render "layouts/header" %>
+
+<%= render "layouts/notification" %>
+
+        <div class="row title-page-gap-top">
+			<div class="col-md-12">
+				<div class="title-page" id="title">Coordinator: <%= @coordinator.name %></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12 center-text">
+				<img src="<%= (@coordinator.image.nil? ? "/uploads/coordinator-1.jpg" : '/uploads/'+@coordinator.image) %>" width="103">
+			</div>
+		</div>
+		
+        <% @coordinator.courses.each_with_index do |course, course_index| %>
+		<div class="row ">
+			<div class="col-md-12 tab-two profilegreybg centered">
+				<div class="tab-text-title"><a href="/courses/<%= course.id %>"><%= course.name %></a></div>
+				<div class="tab-text-two">Prerequisite: <%= course.prerequisite %></div>
+				<div class="tab-text-three"><%= time_ago_in_words(course.created) %> ago</div>
+				<div class="tab-vote">
+					<a href="<%= (logged_in? ? "/votes/?id="+course.id.to_s+"&vote=1" : "#") %>"><span class="fa fa-thumbs-o-up"></span> <%= course.votes.where(:result => 1).count %></a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="<%= (logged_in? ? "/votes/?id="+course.id.to_s+"&vote=0" : "#") %>"><span class="fa fa-thumbs-o-down"></span> <%= course.votes.where(:result => 0).count %></a>
+				</div>
+			</div>
+		</div>
+        <% end %>
+		
+		<div class="tab-gap-hr"></div>
+<%= render "layouts/footer" %>
